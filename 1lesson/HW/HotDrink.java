@@ -1,24 +1,21 @@
+public class HotDrink extends Drink {
+	private int temperature;
 
-public class HotDrink extends Product {
-    private Integer temperature;
-    private Double volume;
+	public HotDrink(String name, int volume, int temperature) {
+		super(name, volume);
+		this.temperature = temperature;
+	}
 
-    public HotDrink(String name, Integer cost, Integer temperature, Double volume) {
-        super(name, cost);
-        this.temperature = temperature;
-        this.volume = volume;
+	public void setTemperature(int temperature) {
+		this.temperature = temperature;
+	}
 
-    }
+	public int getTemperature() {
+		return this.temperature;
+	}
 
-    public Integer getTemperature() {
-        return temperature;
-    }
-
-    public Double getVolume() {
-        return volume;
-    }
-
-    public String toString() {
-        return String.format("%s temperature: %d volume: %.2f", super.toString(), temperature, volume);
-    }
+	@Override
+	public String toString() {
+		return super.toString() + ", temp: " + this.temperature;
+	}
 }
